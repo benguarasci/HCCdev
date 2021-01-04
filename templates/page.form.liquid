@@ -1,0 +1,218 @@
+<script>
+        
+  function toggleoptions(id, id2){
+   
+   document.getElementById(id).classList.remove("card") 
+   document.getElementById(id).classList.add("activecard") 
+   
+   document.getElementById(id2).classList.remove("activecard") 
+   document.getElementById(id2).classList.add("card")
+    
+  }
+  
+  
+  function toggle3options(id1, id2, id3){
+    
+   document.getElementById(id1).classList.remove("card") 
+   document.getElementById(id1).classList.add("activecard") 
+   
+   document.getElementById(id2).classList.remove("activecard") 
+   document.getElementById(id2).classList.add("card")
+   
+   document.getElementById(id3).classList.remove("activecard") 
+   document.getElementById(id3).classList.add("card")
+    
+  }
+  
+  
+  function pageScroll() {
+    window.scrollBy(0,500);
+//     scrolldelay = setTimeout(pageScroll, f10);
+}
+  
+  
+  
+</script>
+
+<div class="custom-page-width">
+  <div class="custom-grid">
+<!--     <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth"> -->
+      <div class="section-header text-center">
+        
+        <h1>Candle Subscriptions</h1>
+       
+        
+        
+          
+    <!-- <input id='rad1' class='rad' name='rad' type='radio'> 
+         <label for='rad1' class='card'> Unscented </label> -->
+
+        
+       <legend style='margin: auto'>Would you like your candles scented or unscented?</legend>
+          
+          
+        
+       <label for='rad0' class='card' id='label0' onclick="toggleoptions('label0', 'label1')">
+        	  <div class="panel-heading">Scented</div>
+              <div class="panel-body">
+                Experience a new seasonally inspired scent each month. Please feel free to contact us with any scent preferences or questions. 
+          </div>
+       </label>     
+          
+       <label for='rad1' class='card' id='label1' onclick="toggleoptions('label1', 'label0')">
+              <div class="panel-heading">Unscented</div>
+              <div class="panel-body">
+                For those who are sensitive to fragrance, but want to create ambiance, your all natural soy candles will come unscented.
+          </div>
+       </label>
+              
+          
+                
+       <input type="radio" name="rad" class="rad" id='rad0'/>
+          
+<!--           <button id="BenButton" style="background-color: orange">Testing Testing</button> -->
+          
+        
+        
+        <fieldset class='set'>
+          <legend>How would you like to pay?</legend>
+          <label for='rad2' class='card' id='label2' onclick="toggle3options('label2', 'label3', 'label4')">
+                 <div class="panel-heading">Monthly</div>
+              <div class="panel-body">
+                {{ 'monthly.png' | asset_url | img_tag: 'scented monthly' }}
+                <p style="font-weight: bold">
+                $22/month
+                </p>
+                <p>
+                  RECURRING
+                <br>
+                CANCEL AT ANY TIME
+                </p>
+              </div>
+          </label>
+          
+          <label for='rad3' class='card'id='label3' onclick="toggle3options('label3', 'label2', 'label4')">
+                 <div class="panel-heading">6 months</div>
+              <div class="panel-body">
+                {{ '6months.png' | asset_url | img_tag: 'scented 6 month' }}
+                <p style="font-weight: bold">
+                $118 PREPAID
+                </p>
+                <p>
+              <br>
+                SAVE 10%
+                </p>
+              </div>
+          </label>
+          <label for='rad4' class='card' id='label4' onclick="toggle3options('label4', 'label3', 'label2')">
+                 <div class="panel-heading">12 months</div>
+              <div class="panel-body">
+                {{ '12months.png' | asset_url | img_tag: 'scented 12 month' }}
+                <p style="font-weight: bold">
+                $224 PREPAID
+                </p>
+                <p>
+                <br>
+                SAVE 15%
+                </p>
+              </div>
+           </label>
+        </fieldset>
+          
+        
+        <input type="radio" name="rad" class="rad" id='rad1'/>
+        
+        
+
+        <fieldset class='set'>
+          <legend>Choose a payment plan</legend>
+           <label for='rad5' class='card' id='label5' onclick="toggle3options('label5', 'label6', 'label7')">
+                 <div class="panel-heading">Monthly</div>
+              <div class="panel-body">
+                {{ 'monthly.png' | asset_url | img_tag: 'scented monthly' }}
+                 <p style="font-weight: bold">
+                $22/month
+                </p>
+                <p>
+                  RECURRING
+                <br>
+                CANCEL AT ANY TIME
+                </p>
+              </div>
+          </label>
+          <label for='rad6' class='card' id='label6' onclick="toggle3options('label6', 'label5', 'label7')">
+                 <div class="panel-heading">6 months</div>
+              <div class="panel-body">
+                {{ '6months.png' | asset_url | img_tag: 'scented 6 month' }}
+               	<p style="font-weight: bold">
+                $118 PREPAID
+                </p>
+                <p>
+              <br>
+                SAVE 10%
+                </p>
+              </div>
+          </label>
+          <label for='rad7' class='card' id='label7' onclick="toggle3options('label7', 'label6', 'label5')">
+                 <div class="panel-heading">12 months</div>
+              <div class="panel-body">
+                {{ '12months.png' | asset_url | img_tag: 'scented 12 month' }}
+                  <p style="font-weight: bold">
+                $224 PREPAID
+                </p>
+                <p>
+                <br>
+                SAVE 15%
+                </p>
+              </div>
+           </label>
+        </fieldset>
+
+          
+        <input id='rad2' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/subscriptions/products/monthly-subcription'>Subscribe</a>
+        </fieldset>
+         
+        <input id='rad3' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/subscriptions/products/6-month-subscription'>Checkout</a>
+        </fieldset>
+          
+        <input id='rad4' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/subscriptions/products/12-month-subscription'>Checkout</a>
+        </fieldset>
+          
+        
+          
+        <input id='rad5' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/unscented-candle-subscriptions/products/monthly-unscented-candle-subscription'>Subscribe</a>
+        </fieldset>
+         
+        <input id='rad6' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/unscented-candle-subscriptions/products/6-month-unscented-candle-subscription'>Checkout</a>
+        </fieldset>
+          
+        <input id='rad7' class='rad2' name='rad2' type='radio'>
+          
+        <fieldset class='set2'>         
+          <a class='btn' href='/collections/unscented-candle-subscriptions/products/12-month-unscented-candle-subscription'>Checkout</a>
+        </fieldset>
+               
+        
+      </div>
+
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
